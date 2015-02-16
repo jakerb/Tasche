@@ -12,7 +12,7 @@ Download the minified version of Tasche from the repo and add it below your jQue
 
 ### Get Started
 
-For this demo, I've created an index page and added a the variable `name`: 
+For this demo, I've created an index page and added the variable `name`: 
 
 ```
 <html>
@@ -27,7 +27,7 @@ For this demo, I've created an index page and added a the variable `name`:
 </html>
 ```
 
-I now want to render the page content, to do this, I instantiate Tasche by doing: 
+I now want to render the page content, to do this, I instantiate Tasche: 
 
 ```
 $(document).ready(function() {
@@ -45,7 +45,7 @@ Hi, my name is Jake
 
 ### Using Templates
 
-You can also use templates with the extension `.tasche`, a `demo.tasche` file is included above which contains:
+You can also use templates with the extension `.tasche`, a `demo.tasche` file is included in this repo which contains:
 
 ```
 <p>Hi {{name}}, this is a template.</p>
@@ -62,7 +62,7 @@ $(document).ready(function() {
 });
 ```
 
-Once the page has been loaded, we get: 
+Once the page has been loaded, the template is rendered and inserted into the index page: 
 
 ```Hi Jake, this is a template.```
 
