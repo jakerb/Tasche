@@ -12,7 +12,7 @@ Download the minified version of Tasche from the repo and add it below your jQue
 
 ### Get Started
 
-For this demo, I've got the following setup and I've named each variable appropriately: 
+For this demo, I've created an index page and added a the variable `name`: 
 
 ```
 <html>
@@ -20,7 +20,7 @@ For this demo, I've got the following setup and I've named each variable appropr
 		<title></title>
 	</head>
 	<body>
-		<p class="demo">Hi, my name is Jake</p>
+		<p class="demo">Hi, my name is {{name}}</p>
 	<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
 	<script src="tasche.js"></script>
 	</body>
