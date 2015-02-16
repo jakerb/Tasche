@@ -6,8 +6,7 @@
 
 $.fn.tasche = function (tasche) {
 	var page;
-
-	if(tasche.template != null && tasche.template.length > 1) { 
+	if(!typeof(tasche.template) === 'undefined') { 
 		$.ajax({ url: tasche.template, type: "GET", async: false, success: function(reply) {
 			if(reply != null && reply.length > 1) {
 				render(reply);
@@ -16,28 +15,31 @@ $.fn.tasche = function (tasche) {
 				render($(this).html());
 			}
 		}});
-		
-		$(this).html(page);
-
 	}
+	else {
+		render($(this).html());
+	}
+
+		$(this).html(page);
 
 	
 	function render(val) {
 		find = val.match(/([^}{]+)(?=})/g);
+		var y = val;
 	    if (find != null && find.length > 0) { 
 			for (var i = find.length - 1; i >= 0; i--) {
 				var x = find[i];
 				var z = tasche[x];
-				if(tasche.template != null && tasche.template.length > 1) {
-					var y = val.replace("{{"+x+"}}", z);
-				} else {
-					var y = $(this).html().replace("{{"+x+"}}", z);
-				}
-				page = y;
+				console.log("{{"+x+"}}");
+				var y = y.replace("{{"+x+"}}", z);
 			};
+			page = y;
 		}
 		else {
 			console.log("Tasche Error.");
 		}
 	}
+
+	
+	
 };
