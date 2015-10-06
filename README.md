@@ -20,27 +20,11 @@ For this demo, I've created an index page and added the variable `name`:
 		<title></title>
 	</head>
 	<body>
-		<p class="demo">Hi, my name is {{name}}</p>
+		<div class="wrapper"></div>
 	<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
 	<script src="tasche.js"></script>
 	</body>
 </html>
-```
-
-I now want to render the page content, to do this, I instantiate Tasche: 
-
-```
-$(document).ready(function() {
-		$(".demo").tasche({
-			name: "Jake"
-		});
-});
-```
-
-When the page is loaded in the browser, we get: 
-
-```
-Hi, my name is Jake
 ```
 
 ### Using Templates
@@ -55,9 +39,10 @@ Now, we use the option `template` when instantiating Tasche, the value will cont
 
 ```
 $(document).ready(function() {
-		$(".demo").tasche({
+		tasche.render({
 			name: "Jake",
-			template: "demo.tasche"
+			element: ".wrapper",
+			template: "http://www.site.com/views/demo.tasche"
 		});
 });
 ```
@@ -65,6 +50,22 @@ $(document).ready(function() {
 Once the page has been loaded, the template is rendered and inserted into the index page: 
 
 ```Hi Jake, this is a template.```
+
+### Callbacks
+
+You can add callbacks when using Tasche, simply by adding it to the render function. In the demo above we can alert a "hello" dialogue box by simply doing: 
+
+```
+$(document).ready(function() {
+		tasche.render({
+			name: "Jake",
+			element: ".wrapper",
+			template: "http://www.site.com/views/demo.tasche"
+		}, function(){ 
+			alert("hello");
+		});
+});
+```
 
 
 ### Thats it!
