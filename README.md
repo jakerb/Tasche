@@ -46,6 +46,7 @@ $(document).ready(function() {
 		});
 });
 ```
+*Note:* Lack of support for jQuery GET calls as local files, we use `http` to grab the template.
 
 Once the page has been loaded, the template is rendered and inserted into the index page: 
 
